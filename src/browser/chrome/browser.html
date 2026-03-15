@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weshky</title>
+  <link rel="stylesheet" href="../themes/weshky-theme.css">
+  <link rel="icon" href="../../icons/weshky-icon-16.svg" type="image/svg+xml">
+</head>
+<body>
+  <div id="browser-root" class="weshky-layout">
+    <!-- Sidebar -->
+    <aside class="weshky-sidebar" id="sidebar">
+      <div class="weshky-sidebar-header">
+        <img class="weshky-sidebar-brand-icon" src="../../icons/weshky-icon-32.svg" alt="">
+        <span class="weshky-sidebar-brand">Weshky</span>
+      </div>
+
+      <!-- Pinned tabs / Spaces -->
+      <div class="weshky-spaces" id="pinned-tabs">
+        <!-- Pinned tabs render here -->
+      </div>
+
+      <!-- Tabs section -->
+      <div class="weshky-tab-section" id="tab-list">
+        <div class="weshky-tab-section-header">
+          <span class="weshky-tab-section-title">Tabs</span>
+        </div>
+        <!-- Tab items render here -->
+      </div>
+
+      <!-- New tab button -->
+      <button class="weshky-new-tab" id="btn-new-tab" title="New Tab (Ctrl+T)">
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <use href="../../icons/toolbar-icons.svg#icon-new-tab"/>
+        </svg>
+        <span>New Tab</span>
+      </button>
+
+      <!-- Sidebar footer actions -->
+      <div class="weshky-sidebar-footer">
+        <button class="weshky-sidebar-action" id="btn-downloads" title="Downloads">
+          <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-downloads"/></svg>
+        </button>
+        <button class="weshky-sidebar-action" id="btn-bookmarks" title="Bookmarks">
+          <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-bookmark"/></svg>
+        </button>
+        <button class="weshky-sidebar-action" id="btn-private" title="Private Window">
+          <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-private"/></svg>
+        </button>
+        <button class="weshky-sidebar-action" id="btn-settings" title="Settings">
+          <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-settings"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="weshky-main">
+      <!-- Toolbar -->
+      <div class="weshky-toolbar">
+        <!-- Navigation buttons -->
+        <div class="weshky-nav-buttons">
+          <button class="weshky-nav-btn" id="btn-back" title="Back (Alt+Left)">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-back"/></svg>
+          </button>
+          <button class="weshky-nav-btn" id="btn-forward" title="Forward (Alt+Right)">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-forward"/></svg>
+          </button>
+          <button class="weshky-nav-btn" id="btn-reload" title="Reload (Ctrl+R)">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-reload"/></svg>
+          </button>
+        </div>
+
+        <!-- URL bar -->
+        <div class="weshky-urlbar-container">
+          <div class="weshky-urlbar" id="urlbar">
+            <div class="weshky-urlbar-security secure" id="urlbar-security">
+              <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-lock"/></svg>
+            </div>
+            <input class="weshky-urlbar-input" id="urlbar-input"
+                   type="text"
+                   placeholder="Search or enter URL"
+                   spellcheck="false"
+                   autocomplete="off">
+            <div class="weshky-urlbar-actions">
+              <button class="weshky-nav-btn" id="btn-bookmark-page" title="Bookmark this page">
+                <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-bookmark"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolbar right actions -->
+        <div class="weshky-toolbar-actions">
+          <button class="weshky-shield-indicator active" id="btn-shield" title="Weshky Shield">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-shield"/></svg>
+            <span class="weshky-shield-count" id="shield-count">0</span>
+          </button>
+          <button class="weshky-nav-btn" id="btn-split-view" title="Split View">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-split-view"/></svg>
+          </button>
+          <button class="weshky-nav-btn" id="btn-menu" title="Menu">
+            <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-menu"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Content area -->
+      <div class="weshky-content" id="content-area">
+        <!-- New Tab Page (default) -->
+        <div class="weshky-newtab" id="newtab-page">
+          <img class="weshky-newtab-logo" src="../../icons/weshky-logo.svg" alt="Weshky">
+          <div class="weshky-newtab-search">
+            <div class="weshky-newtab-searchbar">
+              <svg viewBox="0 0 20 20"><use href="../../icons/toolbar-icons.svg#icon-search"/></svg>
+              <input type="text" placeholder="Search the web" id="newtab-search-input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Shield Panel (popup) -->
+  <div class="weshky-panel" id="shield-panel" style="display: none;">
+    <div class="weshky-panel-header">
+      <span class="weshky-panel-title">Weshky Shield</span>
+      <div class="weshky-toggle active" id="shield-toggle"></div>
+    </div>
+    <div class="weshky-panel-row">
+      <span class="weshky-panel-label">Ads blocked</span>
+      <span class="weshky-panel-value" id="shield-ads-blocked">0</span>
+    </div>
+    <div class="weshky-panel-row">
+      <span class="weshky-panel-label">Trackers blocked</span>
+      <span class="weshky-panel-value" id="shield-trackers-blocked">0</span>
+    </div>
+    <div class="weshky-panel-row">
+      <span class="weshky-panel-label">Fingerprinting blocked</span>
+      <span class="weshky-panel-value" id="shield-fp-blocked">0</span>
+    </div>
+    <div class="weshky-panel-row">
+      <span class="weshky-panel-label">HTTPS upgrades</span>
+      <span class="weshky-panel-value" id="shield-https-upgrades">0</span>
+    </div>
+  </div>
+
+  <script src="../components/tab-manager.js"></script>
+  <script src="../components/navigation.js"></script>
+  <script src="../components/urlbar.js"></script>
+  <script src="../../modules/adblocker/shield.js"></script>
+  <script src="../../modules/antifingerprint/fingerprint-guard.js"></script>
+  <script src="browser.js"></script>
+</body>
+</html>
