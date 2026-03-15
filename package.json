@@ -1,0 +1,28 @@
+{
+  "name": "weshky-browser",
+  "version": "1.0.0",
+  "description": "Weshky - A modern, privacy-focused browser built on the Gecko engine",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:icons": "node scripts/generate-icons.js",
+    "dev": "node scripts/dev.js",
+    "package": "node scripts/package.js",
+    "clean": "node scripts/clean.js",
+    "lint": "eslint src/",
+    "test": "node scripts/test.js"
+  },
+  "keywords": [
+    "browser",
+    "gecko",
+    "privacy",
+    "adblocker",
+    "anti-fingerprint"
+  ],
+  "author": "Weshky",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "sharp": "^0.33.0",
+    "archiver": "^7.0.0"
+  }
+}

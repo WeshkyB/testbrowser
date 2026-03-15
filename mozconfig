@@ -1,0 +1,37 @@
+# Weshky Browser - Mozilla Build Configuration
+# Based on Gecko engine (Firefox)
+
+# Build optimized browser
+ac_add_options --enable-optimize="-O2"
+ac_add_options --disable-debug
+ac_add_options --enable-release
+
+# Custom branding
+ac_add_options --with-branding=browser/branding/weshky
+ac_add_options --with-app-name=weshky
+ac_add_options --with-app-basename=Weshky
+
+# Distribution ID
+ac_add_options --with-distribution-id=org.weshky
+
+# Enable features
+ac_add_options --enable-application=browser
+ac_add_options --enable-default-toolkit=cairo-gtk3-wayland
+ac_add_options --enable-hardening
+ac_add_options --enable-rust-simd
+ac_add_options --enable-wasm-simd
+
+# Privacy defaults
+ac_add_options --disable-crashreporter
+ac_add_options --disable-updater
+ac_add_options --disable-telemetry
+ac_add_options --disable-webrtc
+ac_add_options --disable-eme
+
+# Performance
+ac_add_options --enable-lto=thin
+ac_add_options --enable-jemalloc
+mk_add_options MOZ_MAKE_FLAGS="-j$(nproc)"
+
+# Install directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-weshky

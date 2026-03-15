@@ -1,0 +1,7 @@
+node_modules/
+build/
+obj-weshky/
+*.tar.xz
+*.tar.gz
+.DS_Store
+*.log
